@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دليل فعاليات الجامعة الافتراضية السورية</title>
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+
+    <!-- Bootstrap via CDN: grid, navbar, cards, forms, alerts, modal -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- RTL build of Bootstrap because the pages are dir="rtl" -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body data-page="home">
+
+    <!-- header: logo + navbar (Bootstrap collapse for mobile) -->
+    <header class="main-header">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg w-100">
+                <a class="navbar-brand" href="index.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                        stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" />
+                        <path d="M12 14l-4 2 4 2 4-2-4-2zM8 16v3M16 16v3" />
+                    </svg>
+                    <span>دليل الفعاليات</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNavbar">
+                    <ul class="navbar-nav me-auto align-items-lg-center">
+                        <li class="nav-item"><a class="nav-link active" href="index.html">الرئيسية</a></li>
+                        <li class="nav-item"><a class="nav-link" href="events.html">كل الفعاليات</a></li>
+                        <li class="nav-item"><a class="nav-link" href="event.html">تفاصيل الفعالية</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">عن الدليل</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">اتصل بنا</a></li>
+                        <li class="nav-item me-lg-2">
+                            <button class="theme-toggle" id="theme-toggle">☾</button>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- featured slider -->
+        <section class="featured-events-section">
+            <div class="container">
+                <h2 class="main-section-title">فعاليات بارزة هذا الأسبوع</h2>
+
+                <div class="featured-slider-box">
+                    <!-- Bootstrap carousel; main.js updates the overlay text for the active slide -->
+                    <div id="featuredCarousel" class="carousel slide h-100" data-bs-ride="carousel">
+                        <div class="carousel-inner h-100">
+                            <div class="carousel-item active h-100" data-event="hackathon">
+                                <a href="event.html?id=hackathon">
+                                    <img src="assets/img/hackathon-1.jpg" class="carousel-img" alt="هاكاثون الحلول الرقمية">
+                                </a>
+                            </div>
+                            <div class="carousel-item h-100" data-event="poetry">
+                                <a href="event.html?id=poetry">
+                                    <img src="assets/img/poetry-1.jpg" class="carousel-img" alt="أمسية أدبية وشعرية">
+                                </a>
+                            </div>
+                            <div class="carousel-item h-100" data-event="volunteer">
+                                <a href="event.html?id=volunteer">
+                                    <img src="assets/img/volunteer-1.jpg" class="carousel-img" alt="مبادرة طلابية للتطوع">
+                                </a>
+                            </div>
+                        </div>
+
+                        <button class="carousel-control-prev" type="button" data-bs-target="#featuredCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                            <span class="visually-hidden">السابق</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#featuredCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                            <span class="visually-hidden">التالي</span>
+                        </button>
+
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#featuredCarousel" data-bs-slide-to="0" class="active" aria-label="الشريحة 1"></button>
+                            <button type="button" data-bs-target="#featuredCarousel" data-bs-slide-to="1" aria-label="الشريحة 2"></button>
+                            <button type="button" data-bs-target="#featuredCarousel" data-bs-slide-to="2" aria-label="الشريحة 3"></button>
+                        </div>
+                    </div>
+
+                    <div class="featured-info-overlay">
+                        <span class="featured-tag" id="feat-tag">تقني</span>
+                        <h3 id="feat-title">هاكاثون الحلول الرقمية</h3>
+                        <p id="feat-meta">28-11-2026 | قاعة الهاكاثون والابتكار الرقمي</p>
+                        <a href="event.html?id=hackathon" id="feat-link" class="featured-action-btn">تفاصيل الفعالية</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- quick categories -->
+        <section class="quick-categories-section">
+            <div class="container">
+                <h2 class="main-section-title">تصنيفات سريعة</h2>
+                <div class="categories-badges-holder">
+                    <a href="events.html?cat=culture" class="category-badge-btn tag-culture">ثقافي <span class="badge rounded-pill bg-light text-dark">2</span></a>
+                    <a href="events.html?cat=tech" class="category-badge-btn tag-tech">تقني <span class="badge rounded-pill bg-light text-dark">2</span></a>
+                    <a href="events.html?cat=science" class="category-badge-btn tag-science">علمي <span class="badge rounded-pill bg-light text-dark">2</span></a>
+                    <a href="events.html?cat=creative" class="category-badge-btn tag-creative">إبداعي <span class="badge rounded-pill bg-light text-dark">1</span></a>
+                    <a href="events.html?cat=sport" class="category-badge-btn tag-sports">رياضي <span class="badge rounded-pill bg-light text-dark">1</span></a>
+                    <a href="events.html?cat=social" class="category-badge-btn tag-social">اجتماعي <span class="badge rounded-pill bg-light text-dark">1</span></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- latest events -->
+        <section class="latest-events-section">
+            <div class="container">
+                <h2 class="main-section-title">أحدث الفعاليات</h2>
+                <!-- Bootstrap grid: 1 / 2 / 3 cards per row -->
+                <div class="row g-4">
+                    <div class="col-12 col-md-6 col-lg-4 event-card-col">
+                        <div class="event-mini-card" data-category="culture" data-location="library" data-date="2026-11-15">
+                            <div class="card-slider-wrapper">
+                                <span class="card-tag tag-culture">ثقافي</span>
+                                <span class="status-badge badge" data-date="2026-11-15"></span>
+                                <div class="mini-images-slider">
+                                    <img src="assets/img/reading-3.jpg" alt="صورة فعالية تحدّي القراءة الجامعي" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="card-details-body">
+                                <h3>تحدّي القراءة الجامعي</h3>
+                                <p class="event-date-loc">التاريخ: 15-11-2026 | المكان: المكتبة الجامعية</p>
+                                <p>مسابقة تنافسية تهدف إلى إحياء شغف المطالعة وتطوير مهارات النقد والتحليل لدى الطلاب.</p>
+                                <a href="event.html?id=reading" class="card-action-btn">التفاصيل</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 event-card-col">
+                        <div class="event-mini-card" data-category="culture" data-location="auditorium" data-date="2026-11-18">
+                            <div class="card-slider-wrapper">
+                                <span class="card-tag tag-culture">ثقافي</span>
+                                <span class="status-badge badge" data-date="2026-11-18"></span>
+                                <div class="mini-images-slider">
+                                    <img src="assets/img/poetry-4.jpg" alt="صورة فعالية أمسية أدبية وشعرية" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="card-details-body">
+                                <h3>أمسية أدبية وشعرية</h3>
+                                <p class="event-date-loc">التاريخ: 18-11-2026 | المكان: المدرج الجامعي</p>
+                                <p>ملتقى يجمع المواهب الشابة لإلقاء قصائد ومقطوعات أدبية مميزة ترافقها معزوفات موسيقية دافئة.</p>
+                                <a href="event.html?id=poetry" class="card-action-btn">التفاصيل</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 event-card-col">
+                        <div class="event-mini-card" data-category="tech" data-location="computer-lab" data-date="2026-11-22">
+                            <div class="card-slider-wrapper">
+                                <span class="card-tag tag-tech">تقني</span>
+                                <span class="status-badge badge" data-date="2026-11-22"></span>
+                                <div class="mini-images-slider">
+                                    <img src="assets/img/cyber-3.jpg" alt="صورة فعالية ورشة الأمن السيبراني" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="card-details-body">
+                                <h3>ورشة الأمن السيبراني</h3>
+                                <p class="event-date-loc">التاريخ: 22-11-2026 | المكان: مخبر الحاسوب</p>
+                                <p>ورشة تفاعلية تهدف لنشر الوعي حول السلامة الرقمية وحماية البيانات الشخصية والمؤسساتية.</p>
+                                <a href="event.html?id=cyber" class="card-action-btn">التفاصيل</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 event-card-col">
+                        <div class="event-mini-card" data-category="tech" data-location="hackathon-hall" data-date="2026-11-28">
+                            <div class="card-slider-wrapper">
+                                <span class="card-tag tag-tech">تقني</span>
+                                <span class="status-badge badge" data-date="2026-11-28"></span>
+                                <div class="mini-images-slider">
+                                    <img src="assets/img/hackathon-3.jpg" alt="صورة فعالية هاكاثون الحلول الرقمية" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="card-details-body">
+                                <h3>هاكاثون الحلول الرقمية</h3>
+                                <p class="event-date-loc">التاريخ: 28-11-2026 | المكان: قاعة الهاكاثون والابتكار الرقمي</p>
+                                <p>منافسة برمجية مكثفة لابتكار حلول رقمية ذكية وتطبيقات عملية لمشاكل واقعية تواجه المجتمع.</p>
+                                <a href="event.html?id=hackathon" class="card-action-btn">التفاصيل</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 event-card-col">
+                        <div class="event-mini-card" data-category="science" data-location="exhibition-hall" data-date="2026-12-05">
+                            <div class="card-slider-wrapper">
+                                <span class="card-tag tag-science">علمي</span>
+                                <span class="status-badge badge" data-date="2026-12-05"></span>
+                                <div class="mini-images-slider">
+                                    <img src="assets/img/projects-1.jpg" alt="صورة فعالية ملتقى المشاريع العلمية" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="card-details-body">
+                                <h3>ملتقى المشاريع العلمية</h3>
+                                <p class="event-date-loc">التاريخ: 05-12-2026 | المكان: قاعة المعارض العلمية</p>
+                                <p>معرض جامعي متميز يتيح للطلاب فرصة استعراض مشاريع تخرجهم وأبحاثهم المبتكرة أمام الأكاديميين.</p>
+                                <a href="event.html?id=projects" class="card-action-btn">التفاصيل</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 event-card-col">
+                        <div class="event-mini-card" data-category="science" data-location="science-lab" data-date="2026-12-10">
+                            <div class="card-slider-wrapper">
+                                <span class="card-tag tag-science">علمي</span>
+                                <span class="status-badge badge" data-date="2026-12-10"></span>
+                                <div class="mini-images-slider">
+                                    <img src="assets/img/science-challenge-4.jpg" alt="صورة فعالية مسابقة التحدّي العلمي" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="card-details-body">
+                                <h3>مسابقة التحدّي العلمي</h3>
+                                <p class="event-date-loc">التاريخ: 10-12-2026 | المكان: المختبر العلمي</p>
+                                <p>مسابقة حماسية سريعة تعتمد على اختبار الذكاء، سرعة البديهة، والمعارف العلمية التخصصية للفرق.</p>
+                                <a href="event.html?id=science-challenge" class="card-action-btn">التفاصيل</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="view-all-wrap">
+                    <a href="events.html" class="btn btn-theme px-4">عرض كل الفعاليات</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- team (at bottom) -->
+        <section class="team-section">
+            <div class="container">
+                <div class="credits-box">
+                    <h2>فريق عمل المشروع</h2>
+                    <p>وظيفة مادة BWP401 - دليل فعاليات الجامعة الافتراضية</p>
+                    <div class="team">
+                        <div class="member-card">
+                            <img src="assets/img/team-mirna.jpg" class="member-photo" alt="ميرنا يحيى">
+                            <h3>ميرنا يحيى</h3>
+                            <p class="member-role">مصممة الواجهات</p>
+                            <p class="member-id">ID:mirna_341559</p>
+                        </div>
+                        <div class="member-card">
+                            <img src="assets/img/team-jawa.jpg" class="member-photo" alt="جوى صخر">
+                            <h3>جوى صخر</h3>
+                            <p class="member-role">مديرة الدليل</p>
+                            <p class="member-id">ID:jawa_363690</p>
+                        </div>
+                        <div class="member-card">
+                            <img src="assets/img/team-mira.jpg" class="member-photo" alt="ميرا الصالح">
+                            <h3>ميرا الصالح</h3>
+                            <p class="member-role">مديرة المحتوى</p>
+                            <p class="member-id">ID:meera_287338</p>
+                        </div>
+                        <div class="member-card">
+                            <img src="assets/img/team-sabri.jpg" class="member-photo" alt="صبري العبد">
+                            <h3>صبري العبد</h3>
+                            <p class="member-role">مطور الموقع</p>
+                            <p class="member-id">ID:sabre_343607</p>
+                        </div>
+                        <div class="member-card">
+                            <img src="assets/img/team-rokaya.jpg" class="member-photo" alt="رقية ملوك">
+                            <h3>رقية ملوك</h3>
+                            <p class="member-role">منسقة الفعاليات</p>
+                            <p class="member-id">ID:rokiea_293784</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- footer: contact info, social links, copyright -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col text-col">
+                    <h4>دليل الفعاليات الجامعية</h4>
+                    <p>منصة متكاملة تستعرض كافة الأنشطة، الورشات، والمسابقات الطلابية المقامة داخل كليات الجامعة الافتراضية السورية لإحياء روح الابتكار والتعاون.</p>
+                </div>
+                <div class="footer-col contact-col">
+                    <h4>اتصل بنا</h4>
+                    <ul>
+                        <li>البريد الإلكتروني: <a href="mailto:info@svuonline.org">info@svuonline.org</a></li>
+                        <li>الهاتف: +963978243517</li>
+                        <li>الموقع: دمشق، سوريا</li>
+                    </ul>
+                </div>
+                <div class="footer-col social-col">
+                    <h4>تابعنا على السوشيال ميديا</h4>
+                    <div class="social-links">
+                        <a href="https://facebook.com" target="_blank" class="social-icon">فيسبوك</a>
+                        <a href="https://telegram.org" target="_blank" class="social-icon">تلغرام</a>
+                        <a href="https://instagram.com" target="_blank" class="social-icon">إنستغرام</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>جميع الحقوق محفوظة © دليل فعاليات الجامعة الافتراضية السورية 2026</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="scroll-top-btn" id="scroll-top" aria-label="الصعود للأعلى">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- Bootstrap JS, then our main.js (slider, filter, validation, dark mode) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

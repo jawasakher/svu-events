@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اتصل بنا - دليل فعاليات الجامعة الافتراضية</title>
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+
+    <!-- Bootstrap via CDN: grid, navbar, cards, forms, alerts, modal -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- RTL build of Bootstrap because the pages are dir="rtl" -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body data-page="contact">
+
+    <!-- header: logo + navbar (Bootstrap collapse for mobile) -->
+    <header class="main-header">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg w-100">
+                <a class="navbar-brand" href="index.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                        stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" />
+                        <path d="M12 14l-4 2 4 2 4-2-4-2zM8 16v3M16 16v3" />
+                    </svg>
+                    <span>دليل الفعاليات</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNavbar">
+                    <ul class="navbar-nav me-auto align-items-lg-center">
+                        <li class="nav-item"><a class="nav-link" href="index.html">الرئيسية</a></li>
+                        <li class="nav-item"><a class="nav-link" href="events.html">كل الفعاليات</a></li>
+                        <li class="nav-item"><a class="nav-link" href="event.html">تفاصيل الفعالية</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">عن الدليل</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="contact.html">اتصل بنا</a></li>
+                        <li class="nav-item me-lg-2">
+                            <button class="theme-toggle" id="theme-toggle">☾</button>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="container">
+            <h1 class="page-main-title">تواصل معنا</h1>
+            <div class="contact">
+                <p>
+                    نحن هنا للإجابة على استفساراتكم واقتراحاتكم حول فعاليات الجامعة الافتراضية السورية. لا تترددوا في مراسلتنا!
+                </p>
+                <!-- novalidate: validation is done in main.js so the Bootstrap alert is always shown -->
+                <form id="contact-form" action="#" method="post" novalidate>
+                    <div id="form-alert" class="alert d-none" role="alert"></div>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label for="c-name" class="form-label">الاسم الكامل <span class="text-danger">*</span></label>
+                            <input type="text" id="c-name" class="form-control input-field" placeholder="ادخل اسمك الكامل">
+                            <div class="invalid-feedback"></div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="c-email" class="form-label">البريد الإلكتروني <span class="text-danger">*</span></label>
+                            <input type="email" id="c-email" class="form-control input-field" placeholder="example@svuonline.org" dir="ltr">
+                            <div class="invalid-feedback"></div>
+                        </div>
+                        <div class="col-12">
+                            <label for="c-subject" class="form-label">موضوع الرسالة</label>
+                            <input type="text" id="c-subject" class="form-control input-field" placeholder="موضوع الرسالة">
+                        </div>
+                        <div class="col-12">
+                            <label for="c-message" class="form-label">نص الرسالة <span class="text-danger">*</span></label>
+                            <textarea id="c-message" class="form-control input-field" placeholder="اكتب الرسالة هنا..." rows="5"></textarea>
+                            <div class="invalid-feedback"></div>
+                        </div>
+                        <div class="col-12 d-flex gap-2">
+                            <button type="submit" class="btn btn-theme flex-fill">إرسال الرسالة</button>
+                            <button type="reset" class="btn btn-secondary flex-fill">إعادة تعيين</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- alternative contact info (Bootstrap grid: 3 columns on desktop) -->
+        <section class="container">
+            <div class="row g-4 contact-info-row">
+                <div class="col-md-4">
+                    <div class="contact-info-card h-100">
+                        <i class="bi bi-envelope"></i>
+                        <h3>البريد العام</h3>
+                        <a href="mailto:info@svuonline.org">info@svuonline.org</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="contact-info-card h-100">
+                        <i class="bi bi-telephone"></i>
+                        <h3>الهاتف</h3>
+                        <p dir="ltr">+963978243517</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="contact-info-card h-100">
+                        <i class="bi bi-share"></i>
+                        <h3>السوشيال ميديا</h3>
+                        <p><a href="https://facebook.com" target="_blank">فيسبوك</a> · <a href="https://telegram.org" target="_blank">تلغرام</a> · <a href="https://instagram.com" target="_blank">إنستغرام</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- footer: contact info, social links, copyright -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col text-col">
+                    <h4>دليل الفعاليات الجامعية</h4>
+                    <p>منصة متكاملة تستعرض كافة الأنشطة، الورشات، والمسابقات الطلابية المقامة داخل كليات الجامعة الافتراضية السورية.</p>
+                </div>
+                <div class="footer-col contact-col">
+                    <h4>اتصل بنا</h4>
+                    <ul>
+                        <li>البريد الإلكتروني: <a href="mailto:info@svuonline.org">info@svuonline.org</a></li>
+                        <li>الهاتف: +963978243517</li>
+                        <li>الموقع: دمشق، سوريا</li>
+                    </ul>
+                </div>
+                <div class="footer-col social-col">
+                    <h4>تابعنا على السوشيال ميديا</h4>
+                    <div class="social-links">
+                        <a href="https://facebook.com" target="_blank" class="social-icon">فيسبوك</a>
+                        <a href="https://telegram.org" target="_blank" class="social-icon">تلغرام</a>
+                        <a href="https://instagram.com" target="_blank" class="social-icon">إنستغرام</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>جميع الحقوق محفوظة © دليل فعاليات الجامعة الافتراضية السورية 2026</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="scroll-top-btn" id="scroll-top" aria-label="الصعود للأعلى">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- Bootstrap JS, then our main.js (slider, filter, validation, dark mode) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
