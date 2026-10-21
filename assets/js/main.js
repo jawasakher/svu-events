@@ -181,9 +181,9 @@ function formatDate(iso) {
 // days from today until the event (negative = already finished)
 function daysUntil(iso) {
     var p = iso.split("-");
-    var d = new Date(+p[0], +p[1] - 1, +p[2]);
+    var d = new Date(+p[0], +p[1] - 1, +p[2], 0, 0, 0, 0);
     var t = new Date();
-    t = new Date(t.getFullYear(), t.getMonth(), t.getDate());
+    t = new Date(t.getFullYear(), t.getMonth(), t.getDate(), 0, 0, 0, 0);
     return Math.round((d - t) / 86400000);
 }
 
@@ -421,6 +421,7 @@ function initEventDetails() {
 
 // convert "10:00 ص" / "2:00 م" to 24h [h, m]
 function parseArTime(t) {
+    if (!t || typeof t !== "string") return null;
     var m = t.match(/(\d{1,2}):(\d{2})\s*(ص|م)/);
     if (!m) return null;
     var h = parseInt(m[1], 10) % 12;
@@ -519,10 +520,14 @@ function initBookingForm() {
 
         bootstrap.Modal.getInstance(modalEl).hide();
 
-        // success message on the page
+        // success message on the page (secure DOM manipulation)
         if (alertBox) {
-            alertBox.innerHTML = '<i class="bi bi-check-circle"></i> تم تأكيد حجز ' + seats +
-                ' مقعد باسم ' + name.replace(/</g, "&lt;") + (ev ? ' في «' + ev.title + '»' : "") + '.';
+            alertBox.innerHTML = "";
+            var icon = document.createElement("i");
+            icon.className = "bi bi-check-circle me-1";
+            alertBox.appendChild(icon);
+            var msgText = " تم تأكيد حجز " + seats + " مقعد باسم " + name + (ev ? " في «" + ev.title + "»" : "") + ".";
+            alertBox.appendChild(document.createTextNode(msgText));
             alertBox.style.display = "block";
             setTimeout(function () {
                 alertBox.style.display = "none";
