@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-labelledby="title">
+  <title>دليل الفعاليات</title>
+  <rect width="24" height="24" rx="5" fill="#0f172a"/>
+  <g fill="none" stroke="#3B82F6" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
+    <path d="M8 3v3M16 3v3M4 10h16M6 5h12a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z"/>
+    <path d="m12 13-3 1.5 3 1.5 3-1.5-3-1.5ZM9 14.5v2.25M15 14.5v2.25"/>
+  </g>
+</svg>
